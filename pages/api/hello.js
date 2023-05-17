@@ -10,7 +10,7 @@ export default async function handler(req, res) {
 
   const completion = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
-    temperature: 0,
+    temperature: 0.2,
     messages: [{
       role: "system",
       content: "You are a elementary school quiz generator"
@@ -23,8 +23,9 @@ export default async function handler(req, res) {
                 add a <br> between all tags.
                 give more space between qustions so kids can show work.
                 create a answer key below all the questions.
-                I am using talwind css, put questions side by side going down in a column
-                `
+                I am using tailwind css, put questions side by side going down in a column and add space between them.
+                Make and option to email all questions
+                do not show the answers in the questions, only in the answer key.`
     }]
   })
 
