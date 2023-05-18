@@ -15,20 +15,25 @@ export const SideBar =({children}) => {
                     <FontAwesomeIcon icon={faBrain} className="text-3xl pt-5"/>
                 </div>
                 <div className="flex-1 overflow-auto bg-gradient-to-b from-amber-800 to-yellow-300">
-                    {!!user ? (
+                    
+                </div>
+                <div className="bg-yellow-300 flex items-center gap-2 border-t border-orange-700/50 h-20 px-2">
+                {!!user ? (
                         <>
-                            <div>
-                                <Image src={user.picture} alt={user.name} height={50} width={50} />
-                                <div>{user.email}</div>
+                            <div className="min-w-[50px]">
+                                <Image src={user.picture} alt={user.name} height={50} width={50} className="rounded-full"/>
                             </div>
-                            <Link href='/api/auth/logout'>Logout</Link>
+                            <div className="flex-1">
+                                <div className="font-bold">{user.email}</div>
+                                <Link href='/api/auth/logout' className="text-sm text-red-500">Logout</Link>
+                            </div>
                         </>
                     ) : (
                         <Link href='/api/auth/login'>Login</Link>
                     )}
                 </div>
             </div>
-            <div>{children}</div>
+            <div className="bg-zinc-50">{children}</div>
         </div>
     )
 }
