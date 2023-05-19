@@ -15,7 +15,7 @@ export default function Home(){
                     <FontAwesomeIcon icon={faBrain} className="text-3xl pt-5"/>
                 </div>
                 <p className="py-2">Discover an AI-powered application that creates top-notch quizzes tailored for elementary school students in grades 1-6. With a focus on quality and educational value, our platform generates engaging quizzes that align with the curriculum. Enhance your child's learning journey with interactive quizzes designed to foster knowledge retention and academic growth.</p>
-                <Link href="/new"><button className="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded w-full">Get started</button></Link>
+                <Link href="/post/new"><button className="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded w-full">Get started</button></Link>
             </div>
         </div>
     )

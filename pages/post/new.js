@@ -1,4 +1,4 @@
-import { SideBar } from '../components/sidebar/SideBar'
+import { SideBar } from '../../components/sidebar/SideBar'
 import { Inter } from 'next/font/google'
 import { useState } from 'react'
 import {useUser} from "@auth0/nextjs-auth0/client"
