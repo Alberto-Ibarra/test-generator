@@ -8,7 +8,7 @@ import { faBrain } from "@fortawesome/free-solid-svg-icons"
 export default function Home(){
     return(
         <div className="w-screen h-screen overflow-hidden flex justify-center items-center relative">
-            <Image src={SchoolImage} fill className="absolute"/>
+            <Image src={SchoolImage} alt="image" fill className="absolute"/>
             <div className="relative z-10 text-white px-10 py-5 text-center max-w-screen-sm bg-slate-900 rounded-md backdrop-blur-sm">
                 <div className="px-2 flex justify-center">
                     <h1 className="text-4xl text-center py-4">QuizKid</h1>

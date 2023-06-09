@@ -3,12 +3,15 @@ import { withApiAuthRequired , getSession} from '@auth0/nextjs-auth0';
 import clientPromise from '../../lib/mongodb';
 
 export default withApiAuthRequired (async function handler(req, res) {
+  try{
+
+
   const {user} = await getSession(req, res)
   const client = await clientPromise
   const db = client.db("quizkid")
   
   const {selectedOption, subject, keywords} = req.body
-
+    console.log(selectedOption, subject, keywords);
   const config = new Configuration({
     apiKey: process.env.OPENAI_API_KEY
   })
@@ -28,10 +31,9 @@ export default withApiAuthRequired (async function handler(req, res) {
                 limited to the following SEO-friendly HTML tags: p, h1, h2, strong, li, ol, ul, i, div.
                 this is going to be printed and students are gonna write on it. make output as such.
                 add a <br> between all tags.
-                give more space between qustions so kids can show work.
+                give space between questions.
                 create a answer key below all the questions.
                 I am using tailwind css, put questions side by side going down in a column and add space between them.
-                Make and option to email all questions
                 do not show the answers in the questions, only in the answer key.`
     }]
   })
@@ -51,10 +53,9 @@ export default withApiAuthRequired (async function handler(req, res) {
                 limited to the following SEO-friendly HTML tags: p, h1, h2, strong, li, ol, ul, i, div.
                 this is going to be printed and students are gonna write on it. make output as such.
                 add a <br> between all tags.
-                give more space between qustions so kids can show work.
+                give space between questions.
                 create a answer key below all the questions.
                 I am using tailwind css, put questions side by side going down in a column and add space between them.
-                Make and option to email all questions
                 do not show the answers in the questions, only in the answer key.`
     }, {
       role: 'assistant',
@@ -80,4 +81,8 @@ export default withApiAuthRequired (async function handler(req, res) {
   })
 
   res.status(200).json(formattedText || "")
+}catch (error) {
+  // console.error(error);
+  res.status(500).json({ error: 'An error occurred while generating the quiz.' });
+}
 })
