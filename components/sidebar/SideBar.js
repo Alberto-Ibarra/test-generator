@@ -16,7 +16,7 @@ export const SideBar =({children, posts, postId}) => {
                 <div className="flex-1 overflow-auto bg-gradient-to-b from-amber-800 to-yellow-300">
                 <h2 className="m-4 p-2 bg-slate-800 rounded-full text-center">{posts.length} quizes created</h2>
                     {posts.map(post => (
-                        <div className="px-2">
+                        <div className="px-2" key={post._id}>
                             <Link key={post._id} href={`/post/${post._id}`} className={`py-1 border border-white/0 block text-ellipsis overflow-hidden whitespace-nowrap my-1 px-2 bg-white/10 rounded-sm ${postId === post._id ? "bg-white/20 border-white" : ""}`}>
                             {post.title.split("<title>").flatMap((title, index) => (
                                 <div key={index}>
