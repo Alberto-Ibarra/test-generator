@@ -14,7 +14,7 @@ export default function Home(){
                     <h1 className="text-4xl text-center py-4">QuizKid</h1>
                     <FontAwesomeIcon icon={faBrain} className="text-3xl pt-5"/>
                 </div>
-                <p className="py-2">Discover an AI-powered application that creates top-notch quizzes tailored for elementary school students in grades 1-6. With a focus on quality and educational value, our platform generates engaging quizzes that align with the curriculum. Enhance your child's learning journey with interactive quizzes designed to foster knowledge retention and academic growth.</p>
+                <p className="py-2">Discover an AI-powered application that creates top-notch quizzes tailored for elementary school students in grades 1-6. With a focus on quality and educational value, our platform generates engaging quizzes that align with the curriculum. Enhance your child&apos;s learning journey with interactive quizzes designed to foster knowledge retention and academic growth.</p>
                 <Link href="/post/new"><button className="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded w-full">Get started</button></Link>
             </div>
         </div>
