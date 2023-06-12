@@ -6,12 +6,18 @@ import Link from "next/link";
 import { getAppProps } from '@/utils/getAppProps';
 
 
-export default function Post(props){
-    console.log(props);
 
+
+export default function Post(props){
     return(
         <div className="overflow-auto h-full">
-            <Link href="/post/new"><button className="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 mt-4 ml-4 rounded">Back</button></Link>
+            <Link href="/post/new"><button className="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 mt-4 ml-4 mr-4 rounded">Back</button></Link>
+            <button
+                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                
+                >
+                Delete
+            </button>
             <div className="max-w-screen-sm mx-auto">
                 <div className="text-lg font-bold mt-6 p-2 bg-stone-200 rounded-sm">
                     Keywords
@@ -39,8 +45,7 @@ Post.getSideBar = function getSideBar(page, pageProps){
 
 export const getServerSideProps = withPageAuthRequired({
     async getServerSideProps(contex){
-
-            const props = await getAppProps(contex)
+        const props = await getAppProps(contex)
 
         const userSession = await getSession(contex.req, contex.res)
         const client = await clientPromise
@@ -70,6 +75,5 @@ export const getServerSideProps = withPageAuthRequired({
                 ...props
             }
         }
-
     }
 })

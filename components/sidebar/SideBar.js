@@ -4,8 +4,6 @@ import {useUser} from "@auth0/nextjs-auth0/client"
 import Link from "next/link"
 import Image from "next/image"
 
-
-
 export const SideBar =({children, posts, postId}) => {
     const {user} = useUser()
     return (
